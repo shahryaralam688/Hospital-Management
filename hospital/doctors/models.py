@@ -12,4 +12,7 @@ class Doctors(models.Model):
         ('Leave','leave'),
     ]
     availability  = models.CharField(max_length=20, choices=Availability, default='available')
+    
+    def __str__(self):
+        return str(self.doctor_name)
 # Create your models here.

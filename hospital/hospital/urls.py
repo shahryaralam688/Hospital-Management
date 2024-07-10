@@ -26,7 +26,7 @@ urlpatterns = [
     
     #Doctor method url
     path('add-appointment', views.Add_appointment , name= 'add-appointment'),
-    path('appointments',views.Appointments, name= 'appointments'),
+    path('appointments',views.appointments, name= 'appointments'),
     path('about-appointment',views.Appointment_details, name= 'appointment-detail'),
     path('edit-appointment',views.Edit_appointment, name= 'edit-appointment'),
     

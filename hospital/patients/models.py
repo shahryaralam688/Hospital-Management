@@ -15,4 +15,7 @@ class Patients(models.Model):
     ]
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
     last_visit = models.DateTimeField(default=timezone.now)
+    
+    def __str__(self):
+        return str(self.patient_name)
 # Create your models here.

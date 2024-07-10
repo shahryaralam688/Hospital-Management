@@ -4,9 +4,16 @@ from doctors.models import Doctors
 
 class Appointment(models.Model):
     
-	appointment_id =models.CharField(max_length=20)
+    appointment_id =models.CharField(max_length=5)
     patient_id = models.ForeignKey(Patients, on_delete=models.CASCADE)
     token_number =models.CharField(max_length=10)
     doctor_name = models.ForeignKey(Doctors, on_delete=models.CASCADE)
     problem = models.CharField(max_length=20)
+    STATUS =[
+        ('pending','pending'),
+        ('active','active')
+    ]
+    status = models.CharField(max_length=20, choices=STATUS, default='pending')
+    
+    
 # Create your models here.

@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 #from app.models import Patient,Doctor
 from patients.models import Patients
 from doctors.models import Doctors
+from appointments.models import Appointment
 
 def login_page(request):
     return render(request,'login.html')
@@ -97,8 +98,13 @@ def Doctors_details(request):
 # All method related Appointment!
 
 
-def Appointments(request):
-    return render(request, 'appointments/appointments.html')
+def appointments(request):
+    appointmensdata = Appointment.objects.all()
+    data ={
+        'appointmentsdata':appointmensdata
+    }  
+    
+    return render(request, 'appointments/appointments.html', data)
 
 def Add_appointment(request):
     return render(request, 'appointments/add-appointment.html')

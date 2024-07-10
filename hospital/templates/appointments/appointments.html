@@ -49,6 +49,8 @@ d{% extends 'base.html' %}
 										</tr>
 									</thead>
 									<tbody>
+										{% for i in appointmentsdata %}
+										
 										<tr>
 											<td>
 												<div class="custom-control custom-checkbox">
@@ -56,191 +58,19 @@ d{% extends 'base.html' %}
 													<label class="custom-control-label" for="1"></label>
 												</div>
 											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
+											<td>{{i.appointment_id}}</td>
+											<td>{{i.patient_id}}</td>
+											<td>{{i.token_number}}</td>
+											<td>{{i.doctor_name}}</td>
+											<td>{{i.problem}}</td>
 											<td>
-												<span class="badge badge-success">Active</span>
+												<span class="badge {% if i.status == 'active' %}badge-success{% elif i.status == 'pending' %}badge-warning{% endif %}">
+													{{ i.status }}
+												</span>
 											</td>
                                         </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="2">
-													<label class="custom-control-label" for="2"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="3">
-													<label class="custom-control-label" for="3"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="4">
-													<label class="custom-control-label" for="4"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="5">
-													<label class="custom-control-label" for="5"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="6">
-													<label class="custom-control-label" for="6"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="7">
-													<label class="custom-control-label" for="7"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="8">
-													<label class="custom-control-label" for="8"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="9">
-													<label class="custom-control-label" for="9"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="10">
-													<label class="custom-control-label" for="10"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="11">
-													<label class="custom-control-label" for="11"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="12">
-													<label class="custom-control-label" for="12"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-										</tr>
+										
+										{% endfor %%}
 									</tbody>
                                 </table>
                                 
