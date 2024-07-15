@@ -10,10 +10,12 @@ class Appointment(models.Model):
     doctor_name = models.ForeignKey(Doctors, on_delete=models.CASCADE)
     problem = models.CharField(max_length=20)
     STATUS =[
-        ('pending','pending'),
-        ('active','active')
+        ('pending','Aending'),
+        ('active','Active')
     ]
-    status = models.CharField(max_length=20, choices=STATUS, default='pending')
+    status = models.CharField(max_length=20, choices=STATUS, default='Pending')
     
+    def __str__(self):
+        return str(self.appointment_id)
     
 # Create your models here.

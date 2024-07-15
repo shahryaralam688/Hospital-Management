@@ -31,28 +31,28 @@ d{% extends 'base.html' %}
 					<div class="col-md-12">
 						<div class="widget-area-2 proclinic-box-shadow">
 							<h3 class="widget-title">Add Patient</h3>
-							<form method="post" action="{% url 'add_patient' %}">
+							<form method="POST" action="{% url 'add_patient' %}">
 								{% csrf_token %}
 								<div class="form-row">
 									<div class="form-group col-md-6">
-										<label for="patient-name">Patient Name</label>
-										<input type="text" class="form-control" placeholder="Patient name" id="patient-name" name="patient_name">
+										<label for="patient_name">Patient Name</label>
+										<input type="text" class="form-control" id="patient-name" name="patient_name">
 									</div>
 									<div class="form-group col-md-6">
-										<label for="dob">Date Of Birth</label>
-										<input type="date" placeholder="Date of Birth" class="form-control" id="dob" name="dob">
+										<label for="date_of_birth">Date Of Birth</label>
+										<input type="date" class="form-control" id="date_of_birth" name="date_of_birth">
 									</div>
 									<div class="form-group col-md-6">
 										<label for="age">Age</label>
-										<input type="text" placeholder="Age" class="form-control" id="age" name="age">
+										<input type="text" class="form-control" id="age" name="age">
 									</div>
 									<div class="form-group col-md-6">
 										<label for="phone">Phone</label>
-										<input type="text" placeholder="Phone" class="form-control" id="phone" name="phone">
+										<input type="text" class="form-control" id="phone" name="phone">
 									</div>
 									<div class="form-group col-md-6">
 										<label for="email">Email</label>
-										<input type="email" placeholder="email" class="form-control" id="Email" name="email">
+										<input type="email" class="form-control" id="email" name="email">
 									</div>
 									<div class="form-group col-md-6">
 										<label for="gender">Gender</label>
@@ -64,22 +64,14 @@ d{% extends 'base.html' %}
 									</div>
 									<div class="form-group col-md-12">
 										<label for="exampleFormControlTextarea1">Address</label>
-										<textarea placeholder="Address" class="form-control" id="exampleFormControlTextarea1" rows="3" name="address"></textarea>
+										<textarea class="form-control" id="address" rows="3" name="address"></textarea>
 									</div>
-
-									<div class="form-check col-md-12 mb-2">
-										<div class="text-left">
-											<div class="custom-control custom-checkbox">
-												<input class="custom-control-input" type="checkbox" id="ex-check-2">
-												<label class="custom-control-label" for="ex-check-2">Please Confirm</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group col-md-6 mb-3">
+									<div class="form-group col-md-12">
 										<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 									</div>
 								</div>
 							</form>
+							
 							<!-- Alerts-->
 							<div class="alert alert-success alert-dismissible fade show" role="alert">
 								<strong>Successfully Done!</strong> Please add payment now

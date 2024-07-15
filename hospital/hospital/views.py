@@ -12,28 +12,28 @@ def Index(request):
     return render(request, 'index.html')
 def Add_patient(request):
     if request.method == "POST":
+        # Patient Name  Date Of Birth age phone email gender  address
         patient_name = request.POST.get('patient_name')
-        dob = request.POST.get('dob')
+        date_of_birth = request.POST.get('date_of_birth')
         age = request.POST.get('age')
         phone = request.POST.get('phone')
         email = request.POST.get('email')
         gender = request.POST.get('gender')
         address = request.POST.get('address')
-        status = request.POST.get('status')
-
+        
         patient = Patients(
-            patient_Name = patient_name,
-            date_of_birth = dob,
+            patient_name = patient_name,
+            date_of_birth = date_of_birth,
             age = age,
             phone = phone,
             gender = gender,
             email = email,
             address = address,
-            status =status,
         )
         patient.save()
 
     return render(request,'patients/add_patient.html')
+
 def patients(request):
     patientsdata = Patients.objects.all().order_by('-last_visit')
     data ={
