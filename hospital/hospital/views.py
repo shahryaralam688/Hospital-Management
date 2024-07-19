@@ -12,7 +12,6 @@ def Index(request):
     return render(request, 'index.html')
 def Add_patient(request):
     if request.method == "POST":
-        # Patient Name  Date Of Birth age phone email gender  address
         patient_name = request.POST.get('patient_name')
         date_of_birth = request.POST.get('date_of_birth')
         age = request.POST.get('age')
@@ -59,7 +58,45 @@ def doctors(request):
     return render(request, 'doctors/doctors.html', data)
 
 def Add_doctors(request):
+    if request.method == "POST":
+        doctor_name = request.POST.get('doctor_name')
+        date_of_birth = request.POST.get('date_of_birth')
+        specialization = request.POST.get('specialization')
+        experience = request.POST.get('experience')
+        age = request.POST.get('age')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        gender = request.POST.get('gender')
+        doctor_detail = request.POST.get('doctor_detail')
+        address = request.POST.get('address')  # Corrected variable name
+        # Debugging: Print received form data
+        print(f"doctor_name: {doctor_name}")
+        print(f"date_of_birth: {date_of_birth}")
+        print(f"specialization: {specialization}")
+        print(f"experience: {experience}")
+        print(f"age: {age}")
+        print(f"phone: {phone}")
+        print(f"email: {email}")
+        print(f"gender: {gender}")
+        print(f"doctor_detail: {doctor_detail}")
+        print(f"address: {address}")
+        
+        doctor = Doctors(
+            doctor_name=doctor_name,
+            date_of_birth=date_of_birth,
+            specialization=specialization,
+            experience=experience,
+            age=age,
+            phone=phone,
+            email=email,
+            gender=gender,
+            doctor_detail=doctor_detail,
+            address=address,
+        )
+        doctor.save()  # Save the object to the database
+        
     return render(request, 'doctors/add-doctor.html')
+
 
 def Edit_doctors(request):
     if request.method == "POST":
@@ -87,9 +124,6 @@ def Edit_doctors(request):
             experience_level=experience_level
         )
         patient.save()
-    
-    
-    
     return render(request, 'doctors/edit-doctor.html')
 
 def Doctors_details(request):

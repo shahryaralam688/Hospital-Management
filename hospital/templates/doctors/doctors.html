@@ -1,4 +1,4 @@
-d{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 				<!-- Page Title -->
 				<div class="container mt-0">
@@ -63,7 +63,9 @@ d{% extends 'base.html' %}
 											<td>{{ n.phone }}</td>
 											<td>{{ n.specialization }}</td>
 											<td>
-												<span class="badge badge-success">{{n.availability}}</span>
+												<span class="badge {% if n.status == 'Available' %}badge-success{% elif n.status == 'Leave' %}badge-warning{% elif n.status == 'Not Available' %}badge-danger{% endif %}"> 
+													{{  n.availability }}
+												</span>
 											</td>
 										</tr>
 										{% endfor %}

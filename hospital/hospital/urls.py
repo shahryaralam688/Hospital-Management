@@ -6,7 +6,7 @@ from .import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('index', views.Index , name= 'index'),
+    path('', views.Index , name= 'index'),
     path('base',views.BASE,name='base'),
 
     path('add-patient',views.Add_patient,name='add_patient'),
@@ -24,7 +24,7 @@ urlpatterns = [
     path('edit-doctor',views.Edit_doctors, name= 'edit-doctor'),
     
     
-    #Doctor method url
+    #Appointment method url
     path('add-appointment', views.Add_appointment , name= 'add-appointment'),
     path('appointments',views.appointments, name= 'appointments'),
     path('about-appointment',views.Appointment_details, name= 'appointment-detail'),

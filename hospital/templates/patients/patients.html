@@ -65,7 +65,7 @@ d{% extends 'base.html' %}
 											<td>{{  i.phone }}</td>
 											<td>{{  i.last_visit }}</td>
 											<td>
-												<span class="badge badge-success">{{  i.status }}</span>
+												<span class="badge {% if i.status == 'Complete' %}badge-success{% elif i.status == 'Pending' %}badge-warning{% elif i.status == 'Cancelled' %}badge-danger{% endif %}">{{  i.status }}</span>
 											</td>
 										</tr>
 										{% endfor %} 

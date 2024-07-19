@@ -10,7 +10,7 @@ class Patients(models.Model):
     STATUS_CHOICES = [
         ('Pending', 'Pending'),
         ('Complete', 'Complete'),
-        ('Cancel', 'Cancelled'),
+        ('Cancelled', 'Cancelled'),
     ]
     Gender =[
         ('Male','Male'),
